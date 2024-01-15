@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://bj8v5o040vyyn"]
+
+[ext_resource type="PackedScene" uid="uid://b57rrcmx13nyw" path="res://Asset/Environment/Scene/pillar_35.tscn" id="1_4ugal"]
+[ext_resource type="PackedScene" uid="uid://cf0kcm5cdcchl" path="res://Asset/Environment/Scene/arc_mid.tscn" id="2_2lsuo"]
+[ext_resource type="Shader" uid="uid://6xt7fxdknll4" path="res://Asset/Environment/Material/portal.tres" id="3_4uf2l"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u2v2p"]
+frequency = 0.0017
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lysv3"]
+seamless = true
+seamless_blend_skirt = 0.276
+noise = SubResource("FastNoiseLite_u2v2p")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_737o6"]
+noise_type = 5
+fractal_type = 2
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u7nhn"]
+seamless = true
+noise = SubResource("FastNoiseLite_737o6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2rwl"]
+render_priority = 0
+shader = ExtResource("3_4uf2l")
+shader_parameter/ColorParameter = null
+shader_parameter/ColorEdge = Color(0, 1, 0.25098, 1)
+shader_parameter/Color_A = Color(0.0666667, 0.192157, 0.12549, 1)
+shader_parameter/Color_B = Color(0.631373, 0.313726, 0.176471, 1)
+shader_parameter/Texture2DParameter = SubResource("NoiseTexture2D_lysv3")
+shader_parameter/Texture2DParameter2 = SubResource("NoiseTexture2D_u7nhn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dfuwy"]
+size = Vector2(3.5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x30v7"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.501961, 1, 0, 1)
+emission_energy_multiplier = 3.0
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_0owcg"]
+offsets = PackedFloat32Array(0, 0.343137)
+colors = PackedColorArray(0, 0.90625, 6.48201e-07, 1, 1, 0.351563, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4e50s"]
+gradient = SubResource("Gradient_0owcg")
+
+[sub_resource type="Curve" id="Curve_8ao3u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dmc2e"]
+curve = SubResource("Curve_8ao3u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l5oe5"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 2.5, 1)
+gravity = Vector3(0, 0, 10)
+damping_min = 1.0
+damping_max = 2.0
+scale_min = 0.1
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_dmc2e")
+color_ramp = SubResource("GradientTexture1D_4e50s")
+turbulence_enabled = true
+turbulence_noise_strength = 0.2
+
+[sub_resource type="QuadMesh" id="QuadMesh_70cce"]
+
+[node name="Portal" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
+
+[node name="pillar_35" parent="." instance=ExtResource("1_4ugal")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="pillar_36" parent="." instance=ExtResource("1_4ugal")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, 0)
+
+[node name="Arc_mid" parent="." instance=ExtResource("2_2lsuo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 3, 0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arc_mid"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.7, -1, 2.5)
+material_override = SubResource("ShaderMaterial_g2rwl")
+mesh = SubResource("QuadMesh_dfuwy")
+skeleton = NodePath("../..")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Arc_mid/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_x30v7")
+cast_shadow = 0
+amount = 20
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_l5oe5")
+draw_pass_1 = SubResource("QuadMesh_70cce")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Arc_mid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 2.5)
+light_color = Color(0.333333, 0.870588, 0.00392157, 1)
+light_specular = 0.0
+omni_range = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Arc_mid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, 2.5)
+light_color = Color(0.945098, 0.333333, 0, 1)
+light_specular = 0.0
+omni_range = 1.0

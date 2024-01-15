@@ -1,0 +1,39 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://dvigcyfi73elr"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_o07vl"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_4fuww"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[resource]
+code = "shader_type spatial;
+
+
+
+void fragment() {
+// Input:2
+	vec4 n_out2p0 = COLOR;
+
+
+// VectorDecompose:3
+	float n_out3p0 = n_out2p0.x;
+	float n_out3p1 = n_out2p0.y;
+	float n_out3p2 = n_out2p0.z;
+	float n_out3p3 = n_out2p0.w;
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	ALPHA = n_out3p0;
+
+
+}
+"
+nodes/fragment/0/position = Vector2(460, 120)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_o07vl")
+nodes/fragment/2/position = Vector2(-240, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeVectorDecompose_4fuww")
+nodes/fragment/3/position = Vector2(80, 240)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 2, 0, 0, 0, 3, 0, 0, 1)

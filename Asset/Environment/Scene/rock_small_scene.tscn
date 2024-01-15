@@ -1,0 +1,404 @@
+[gd_scene load_steps=4 format=3 uid="uid://wr0l26gvxntu"]
+
+[ext_resource type="PackedScene" uid="uid://b5tk5pfb7kvmm" path="res://Asset/Environment/Scene/rock_small_01.tscn" id="1_gn45m"]
+[ext_resource type="PackedScene" uid="uid://cgeihpcsmw7mj" path="res://Asset/Environment/Scene/rock_small_02.tscn" id="2_t2xlq"]
+[ext_resource type="PackedScene" uid="uid://bd6d6kp6oyfbu" path="res://Asset/Environment/Scene/rock_small_03.tscn" id="3_ace50"]
+
+[node name="Rock_Small_Scene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2.5)
+
+[node name="Rock_Small_01" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 1.75)
+
+[node name="Rock_Small_02" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85, 0, -6.4)
+
+[node name="Rock_Small_03" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.85, 0, -7.5)
+
+[node name="Rock_Small_04" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, -4)
+
+[node name="Rock_Small_05" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 8, 0, -18.4)
+
+[node name="Rock_Small_06" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 10.2, 0, -20.9)
+
+[node name="Rock_Small_07" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 1.1, 0, -8.3)
+
+[node name="Rock_Small_08" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -7.35, 0, -13.95)
+
+[node name="Rock_Small_09" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -7.3, 0, -20.1)
+
+[node name="Rock_Small_10" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.4, 0, -6.3)
+
+[node name="Rock_Small_11" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -14.65, 0, 0.149996)
+
+[node name="Rock_Small_12" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -13.75, 0, -0.0500038)
+
+[node name="Rock_Small_13" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -15.35, 0, 1.1)
+
+[node name="Rock_Small_14" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -14.45, 0, -5.1)
+
+[node name="Rock_Small_15" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -14.8, 0, -15.8)
+
+[node name="Rock_Small_16" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -16.35, 0, -20.95)
+
+[node name="Rock_Small_17" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -4.65, 0, -22)
+
+[node name="Rock_Small_18" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -7.55, 0, 1.15)
+
+[node name="Rock_Small_19" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -1.6, 0, 5.05)
+
+[node name="Rock_Small_20" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 6.95, 0, 4.3)
+
+[node name="Rock_Small_21" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 13.95, 0, 0.449998)
+
+[node name="Rock_Small_22" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 8.15, 0, -8.7)
+
+[node name="Rock_Small_23" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 8, 0, -14.9)
+
+[node name="Rock_Small_24" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -0.500001, 0, -9.85)
+
+[node name="Rock_Small_25" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -6.65, 0, -15.2)
+
+[node name="Rock_Small_26" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -5.55, 0, -14.7)
+
+[node name="Rock_Small_27" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 3.55, 0, -21.6)
+
+[node name="Rock_Small_28" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 14.85, 0, -21.25)
+
+[node name="Rock_Small_29" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 4.8, 0, -8.5)
+
+[node name="Rock_Small_30" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 4.5, 0, -21)
+
+[node name="Rock_Small_31" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -5.35, 2.0255, -26.05)
+
+[node name="Rock_Small_32" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 1.7, 2.0255, -25.9)
+
+[node name="Rock_Small_33" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0.95, 2.0255, -35.05)
+
+[node name="Rock_Small_34" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 4.45, 2.0255, -31.7)
+
+[node name="Rock_Small_35" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -6.65, 2.0255, -31.85)
+
+[node name="Rock_Small_36" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, -7.75, 2.0255, -36)
+
+[node name="Rock_Small_37" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -3.3, 2.0255, -30.6)
+
+[node name="Rock_Small_38" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -4.95, 2.0255, -41.5)
+
+[node name="Rock_Small_39" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -6.1, 2.0255, -44.5)
+
+[node name="Rock_Small_40" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -4.6, 2.0255, -44.9)
+
+[node name="Rock_Small_41" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -5.25, 2.0255, -46.15)
+
+[node name="Rock_Small_42" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.45, 2.0255, -50.65)
+
+[node name="Rock_Small_43" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.8, 2.0255, -50.4)
+
+[node name="Rock_Small_44" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -2.5, 2.0255, -51.45)
+
+[node name="Rock_Small_45" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 0.8, 2.0255, -44.5)
+
+[node name="Rock_Small_46" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5.6, 2.0255, -40.1)
+
+[node name="Rock_Small_47" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 2.8, 2.0255, -32.35)
+
+[node name="Rock_Small_48" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -7.45, 6.0255, -62.6)
+
+[node name="Rock_Small_49" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -9.1, 6.0255, -57.65)
+
+[node name="Rock_Small_51" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -15.2, 6.0255, -64.35)
+
+[node name="Rock_Small_52" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -13.25, 6.0255, -70.25)
+
+[node name="Rock_Small_53" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -7.5, 6.0255, -79.7)
+
+[node name="Rock_Small_54" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 1.7, 6.0255, -82.55)
+
+[node name="Rock_Small_55" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 13.25, 6.0255, -84.45)
+
+[node name="Rock_Small_56" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 13.45, 6.0255, -71.05)
+
+[node name="Rock_Small_57" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 3.95, 6.0255, -64.6)
+
+[node name="Rock_Small_58" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 6.15, 6.0255, -79.4)
+
+[node name="Rock_Small_59" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 10.8, 6.0255, -87.4)
+
+[node name="Rock_Small_60" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 4.9, 6.0255, -85.25)
+
+[node name="Rock_Small_61" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -4.5, 6.0255, -83.95)
+
+[node name="Rock_Small_62" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -9.15, 6.0255, -77.3)
+
+[node name="Rock_Small_63" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -10, 6.0255, -67.05)
+
+[node name="Rock_Small_64" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -10.5, 6.0255, -60.45)
+
+[node name="Rock_Small_65" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -8.15, 6.0255, -59.75)
+
+[node name="Rock_Small_66" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -3, 6.0255, -61.4)
+
+[node name="Rock_Small_67" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 1.1, 6.0255, -69.95)
+
+[node name="Rock_Small_68" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 1.1, 6.0255, -80.5)
+
+[node name="Rock_Small_69" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -2.9, 6.0255, -75.05)
+
+[node name="Rock_Small_70" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -12.8, 6.0255, -79.05)
+
+[node name="Rock_Small_71" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -7, 6.0255, -84.1)
+
+[node name="Rock_Small_72" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -5.55, 6.0255, -83.3)
+
+[node name="Rock_Small_73" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -5.2, 10.0255, -88.85)
+
+[node name="Rock_Small_74" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, 3.05, 10.0255, -88.4)
+
+[node name="Rock_Small_75" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, 4.3, 10.0255, -94.1)
+
+[node name="Rock_Small_76" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, 1.95, 10.0255, -100.25)
+
+[node name="Rock_Small_77" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -5.9, 10.0255, -94.6)
+
+[node name="Rock_Small_78" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -6.9, 10.0255, -93.6)
+
+[node name="Rock_Small_79" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -3.7, 10.0255, -97.7)
+
+[node name="Rock_Small_80" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -0.150001, 10.0255, -93.25)
+
+[node name="Rock_Small_81" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -0.600001, 10.0255, -101.4)
+
+[node name="Rock_Small_82" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.45, 10.0255, -97.8)
+
+[node name="Rock_Small_83" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 3.35, 10.0255, -98.5)
+
+[node name="Rock_Small_84" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 3.45, 10.0255, -91.75)
+
+[node name="Rock_Small_85" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -3.95, 10.0255, -91.7)
+
+[node name="Rock_Small_86" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -2.05, 10.0255, -99.5)
+
+[node name="Rock_Small_87" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 2.2, 10.0255, -99.5)
+
+[node name="Rock_Small_88" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 7.15, 6.0255, -87.85)
+
+[node name="Rock_Small_89" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 8.9, 6.0255, -88.5)
+
+[node name="Rock_Small_90" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 13.2, 6.0255, -81.15)
+
+[node name="Rock_Small_91" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 11.95, 6.0255, -75.95)
+
+[node name="Rock_Small_50" parent="." instance=ExtResource("1_gn45m")]
+transform = Transform3D(-0.627654, -0.013457, 0.778377, 0.724649, 0.355285, 0.590472, -0.284491, 0.934661, -0.213244, -9.25, 6.0255, -57.45)
+
+[node name="Rock_small_02" parent="." instance=ExtResource("2_t2xlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0.25)
+
+[node name="Rock_small_03" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0, -6.5)
+
+[node name="Rock_small_22" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45, 2.12969, -35.95)
+
+[node name="Rock_small_23" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.12969, -39.65)
+
+[node name="Rock_small_24" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 1, 2.12969, -46.05)
+
+[node name="Rock_small_25" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.1, 2.12969, -48.2)
+
+[node name="Rock_small_26" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -2.3, 2.12969, -49.95)
+
+[node name="Rock_small_27" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.25, 2.12969, -42.7)
+
+[node name="Rock_small_28" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 3.4, 6.12969, -63.05)
+
+[node name="Rock_small_29" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -8.3, 6.12969, -62.45)
+
+[node name="Rock_small_30" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.799999, 6.12969, -69.65)
+
+[node name="Rock_small_31" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 7.6, 6.12969, -78)
+
+[node name="Rock_small_32" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -3.55, 6.12969, -76.75)
+
+[node name="Rock_small_33" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -8, 6.12969, -78.85)
+
+[node name="Rock_small_34" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.750001, 6.12969, -72.55)
+
+[node name="Rock_small_35" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 7.05, 6.12969, -85.25)
+
+[node name="Rock_small_36" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -10.75, 6.12969, -75.45)
+
+[node name="Rock_small_37" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -6, 6.12969, -67.2)
+
+[node name="Rock_small_38" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 11.15, 6.12969, -70)
+
+[node name="Rock_small_39" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0.85, 10.1297, -89.05)
+
+[node name="Rock_small_40" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 3.2, 10.1297, -95.45)
+
+[node name="Rock_small_41" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.9, 10.1297, -94.95)
+
+[node name="Rock_small_42" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.05, 10.1297, -94.85)
+
+[node name="Rock_small_04" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15, 0, -0.0499997)
+
+[node name="Rock_small_05" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.35, 0, -6.5)
+
+[node name="Rock_small_06" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -2, 0, 0.0500002)
+
+[node name="Rock_small_07" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -7.05, 0, -8.1)
+
+[node name="Rock_small_08" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -6.45, 0, -12.15)
+
+[node name="Rock_small_09" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -11.2, 0, -20.6)
+
+[node name="Rock_small_10" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 5.75, 0, -16.5)
+
+[node name="Rock_small_11" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -7.5, 0, -2.2)
+
+[node name="Rock_small_12" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -6.55, 0, -5.9)
+
+[node name="Rock_small_13" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 8.25, 0, -3.4)
+
+[node name="Rock_small_14" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1.25, 0, 2.9)
+
+[node name="Rock_small_15" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 13.65, 0, -4.65)
+
+[node name="Rock_small_16" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 14.2, 0, 1.95)
+
+[node name="Rock_small_17" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 10.9, 0, -20.25)
+
+[node name="Rock_small_18" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 3.05, 0, -19.95)
+
+[node name="Rock_small_19" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1.35, 2.12969, -27)
+
+[node name="Rock_small_20" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -4.2, 2.12969, -25.5)
+
+[node name="Rock_small_21" parent="." instance=ExtResource("3_ace50")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3.75, 2.12969, -31.5)

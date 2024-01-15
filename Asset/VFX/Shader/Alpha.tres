@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bbxy4x3sqrxja"]
+
+[ext_resource type="Shader" uid="uid://cqgplxlebh3h7" path="res://Asset/VFX/Shader/Smoke.tres" id="1_pdmc7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bx8br"]
+frequency = 0.005
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_db60o"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_bx8br")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0a3kb"]
+seed = 147
+frequency = 0.005
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_44ec0"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 0.586
+noise = SubResource("FastNoiseLite_0a3kb")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pdmc7")
+shader_parameter/Displacement = 0.4
+shader_parameter/Emission_Color = Color(1, 0.243137, 0, 1)
+shader_parameter/Emission_Str = 0.0
+shader_parameter/DisplacementNoise = SubResource("NoiseTexture2D_db60o")
+shader_parameter/Texture2DParameter = SubResource("NoiseTexture2D_44ec0")

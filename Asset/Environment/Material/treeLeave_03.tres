@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dcrni7uveyoyp"]
+
+[ext_resource type="Texture2D" uid="uid://cy4xhiia0ywho" path="res://Asset/Environment/Texture/Leaves.png" id="1_uw3so"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.764706, 0.490196, 0.117647, 1)
+albedo_texture = ExtResource("1_uw3so")
+subsurf_scatter_strength = 1.0

@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://2nj6gcxt1vvp"]
+
+[ext_resource type="Shader" uid="uid://cmv41ferl76mc" path="res://Asset/Environment/Material/TreeShader.tres" id="1_kpxpn"]
+[ext_resource type="Texture2D" uid="uid://cuimpjyen3pvb" path="res://Asset/Environment/Texture/Leaves_02.png" id="2_54w1u"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1dw8w"]
+frequency = 0.4077
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yyvxc"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_1dw8w")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kpxpn")
+shader_parameter/wind_speed = 0.003
+shader_parameter/Color_up = Color(0.713726, 0.329412, 0.0509804, 1)
+shader_parameter/Color_down = Color(0.752941, 0.466667, 0.0156863, 1)
+shader_parameter/Wind = SubResource("NoiseTexture2D_yyvxc")
+shader_parameter/Texture2DParameter = ExtResource("2_54w1u")

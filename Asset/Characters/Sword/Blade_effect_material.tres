@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bshyystxeothe"]
+
+[ext_resource type="Shader" uid="uid://t5nbhasjxf4p" path="res://Asset/Environment/Material/BladeShader.tres" id="1_7c3iv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4ngex"]
+noise_type = 2
+fractal_type = 0
+cellular_distance_function = 1
+cellular_jitter = -1.375
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yvkn1"]
+seamless = true
+seamless_blend_skirt = 0.138
+noise = SubResource("FastNoiseLite_4ngex")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w2xxq"]
+frequency = 0.015
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xl8m6"]
+noise = SubResource("FastNoiseLite_w2xxq")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7c3iv")
+shader_parameter/Offset = 0.0
+shader_parameter/Step = 0.86
+shader_parameter/Emission_Color = Color(1, 0.694118, 0.439216, 1)
+shader_parameter/Emission_intensity = 5.0
+shader_parameter/Emission_Color_dark = Color(0.466667, 0.223529, 0, 1)
+shader_parameter/Noise = SubResource("NoiseTexture2D_yvkn1")
+shader_parameter/Noise_dark = SubResource("NoiseTexture2D_xl8m6")

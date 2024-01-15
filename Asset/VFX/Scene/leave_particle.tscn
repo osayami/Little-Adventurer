@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://j1n8lhftyfyc"]
+
+[ext_resource type="Texture2D" uid="uid://enwwe15ui03s" path="res://Asset/VFX/Textures/Leaf.png" id="1_apn6r"]
+
+[sub_resource type="Curve" id="Curve_5jhsq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.242165, 1), 0.0, 0.0, 0, 0, Vector2(0.77208, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_i7rge"]
+curve = SubResource("Curve_5jhsq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hnvik"]
+particle_flag_align_y = true
+emission_shape = 3
+emission_box_extents = Vector3(5, 0.2, 5)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+angular_velocity_max = 600.64
+gravity = Vector3(0, -0.5, 0)
+tangential_accel_min = -0.5
+tangential_accel_max = 0.5
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_i7rge")
+turbulence_enabled = true
+turbulence_noise_strength = 1.64
+turbulence_noise_scale = 0.53
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh2vj"]
+cull_mode = 2
+albedo_color = Color(0.976471, 0.686275, 0.0705882, 1)
+albedo_texture = ExtResource("1_apn6r")
+disable_receive_shadows = true
+proximity_fade_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vhke0"]
+material = SubResource("StandardMaterial3D_uh2vj")
+size = Vector2(1.004, 2)
+orientation = 0
+
+[node name="Leave_particle" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09485, -4.76837e-07, 0.436243)
+amount = 120
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_hnvik")
+draw_pass_1 = SubResource("PlaneMesh_vhke0")

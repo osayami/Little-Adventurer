@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://d26l7qkbcg5jp"]
+
+[ext_resource type="Texture2D" uid="uid://cijx4wrkhugif" path="res://Asset/VFX/Textures/SmoothMask.png" id="1_f760w"]
+
+[sub_resource type="Gradient" id="Gradient_q800f"]
+offsets = PackedFloat32Array(0.175, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7irh4"]
+gradient = SubResource("Gradient_q800f")
+
+[sub_resource type="Curve" id="Curve_7lnm0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d4lcd"]
+curve = SubResource("Curve_7lnm0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_40koy"]
+emission_shape = 2
+emission_sphere_radius = 0.1
+direction = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = -5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+damping_min = 5.0
+damping_max = 5.0
+scale_min = 0.1
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_d4lcd")
+color_ramp = SubResource("GradientTexture1D_7irh4")
+sub_emitter_mode = 1
+sub_emitter_frequency = 100.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55meu"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0.972549, 0.917647, 0.733333, 1)
+albedo_texture = ExtResource("1_f760w")
+emission_enabled = true
+emission = Color(0.968627, 0.819608, 0.0196078, 1)
+emission_energy_multiplier = 20.0
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+grow_amount = 7.169
+proximity_fade_enabled = true
+distance_fade_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sqmpi"]
+material = SubResource("StandardMaterial3D_55meu")
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_0b01k"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rf06e"]
+curve = SubResource("Curve_0b01k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hu1f3"]
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 9.8, 0)
+damping_max = 10.0
+scale_min = 0.05
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_rf06e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i14j8"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_f760w")
+emission_enabled = true
+emission = Color(1, 0.898039, 0.054902, 1)
+emission_energy_multiplier = 20.0
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqpae"]
+material = SubResource("StandardMaterial3D_i14j8")
+
+[node name="VFXNode" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.583339, 0)
+emitting = false
+amount = 30
+sub_emitter = NodePath("GPUParticles3D")
+one_shot = true
+preprocess = 0.3
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_40koy")
+draw_pass_1 = SubResource("PlaneMesh_sqmpi")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_hu1f3")
+draw_pass_1 = SubResource("QuadMesh_kqpae")

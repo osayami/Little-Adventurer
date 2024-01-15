@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5n8vu7jatxyg"]
+
+[sub_resource type="Gradient" id="Gradient_awhec"]
+offsets = PackedFloat32Array(0, 0.271875, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pfbl0"]
+gradient = SubResource("Gradient_awhec")
+
+[sub_resource type="Curve" id="Curve_53i7a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m08lb"]
+curve = SubResource("Curve_53i7a")
+
+[sub_resource type="Curve" id="Curve_3mw51"]
+max_value = 5.0
+_data = [Vector2(0.31339, 0), 0.0, 0.0, 0, 0, Vector2(1, 1.86364), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ogoex"]
+curve = SubResource("Curve_3mw51")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g6hey"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.5, 10)
+spread = 10.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -0.2
+tangential_accel_max = 0.2
+tangential_accel_curve = SubResource("CurveTexture_ogoex")
+scale_curve = SubResource("CurveTexture_m08lb")
+color_ramp = SubResource("GradientTexture1D_pfbl0")
+turbulence_noise_scale = 6.35
+
+[sub_resource type="Curve" id="Curve_uetgf"]
+_data = [Vector2(0, 0), 0.0, 5.66136, 0, 0, Vector2(0.415094, 1), 0.0, 0.0, 0, 0, Vector2(0.617251, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0363636), -5.39636, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yq6j"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.0980392)
+disable_receive_shadows = true
+use_particle_trails = true
+proximity_fade_enabled = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_va5yj"]
+material = SubResource("StandardMaterial3D_2yq6j")
+radius = 0.02
+radial_steps = 3
+section_length = 0.5
+cap_top = false
+cap_bottom = false
+curve = SubResource("Curve_uetgf")
+
+[node name="Wind_particle" type="GPUParticles3D"]
+cast_shadow = 0
+amount = 20
+lifetime = 5.0
+preprocess = 2.0
+speed_scale = 3.0
+explosiveness = 0.5
+randomness = 0.64
+transform_align = 2
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_g6hey")
+draw_pass_1 = SubResource("TubeTrailMesh_va5yj")

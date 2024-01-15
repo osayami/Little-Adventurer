@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://i4xb6kjfuuc1"]
+
+[ext_resource type="Material" uid="uid://bbxy4x3sqrxja" path="res://Asset/VFX/Shader/Alpha.tres" id="1_ma2bc"]
+
+[sub_resource type="Gradient" id="Gradient_moi84"]
+offsets = PackedFloat32Array(0.396875, 1)
+colors = PackedColorArray(0.843137, 1, 1, 1, 0.319776, 0.451084, 0.46502, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pti4l"]
+gradient = SubResource("Gradient_moi84")
+
+[sub_resource type="Curve" id="Curve_u02eb"]
+_data = [Vector2(0, 0.190909), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kfkfk"]
+curve = SubResource("Curve_u02eb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j0s85"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.8
+direction = Vector3(1, 0, 1)
+gravity = Vector3(0, 2, 0)
+tangential_accel_min = -0.5
+tangential_accel_max = 0.5
+scale_min = 0.3
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_kfkfk")
+color_ramp = SubResource("GradientTexture1D_pti4l")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sdrv3"]
+material = ExtResource("1_ma2bc")
+
+[sub_resource type="Animation" id="Animation_clb0r"]
+resource_name = "PlayParticle"
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.6, 0.6, 0.6), Vector3(1, 1, 1), Vector3(2, 2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gdp4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3foyj"]
+_data = {
+"PlayParticle": SubResource("Animation_clb0r"),
+"RESET": SubResource("Animation_gdp4t")
+}
+
+[node name="Smash_particle" type="Node3D"]
+
+[node name="Smash_particle" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.6
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_j0s85")
+draw_pass_1 = SubResource("SphereMesh_sdrv3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Smash_particle")
+libraries = {
+"": SubResource("AnimationLibrary_3foyj")
+}

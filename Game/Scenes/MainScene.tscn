@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://oaex81cvmvrp"]
+
+[ext_resource type="Texture2D" uid="uid://cveds37lx1g7m" path="res://Asset/UI/Text_Title.png" id="1_4k5ld"]
+[ext_resource type="Script" path="res://Game/Scripts/UI/MainMenuUIgd.gd" id="1_h3v0j"]
+[ext_resource type="Texture2D" uid="uid://cmrdq7darvtn5" path="res://Asset/UI/Button_Start.png" id="2_in8gt"]
+[ext_resource type="Texture2D" uid="uid://p7vjy53db4pa" path="res://Asset/UI/Button_Start_pressed.png" id="3_2uaip"]
+[ext_resource type="Texture2D" uid="uid://dt5e6v2cnjgdn" path="res://Asset/UI/Button_Start_hover.png" id="4_3syc4"]
+[ext_resource type="Texture2D" uid="uid://cm3sq31cem8j6" path="res://Asset/UI/Button_Quit.png" id="5_iju5i"]
+[ext_resource type="Texture2D" uid="uid://c6d6ubfn1d2c" path="res://Asset/UI/Button_Quit_pressed.png" id="6_nwk8k"]
+[ext_resource type="Texture2D" uid="uid://duo52oj06oau2" path="res://Asset/UI/Button_Quit_hover.png" id="7_8yxxc"]
+[ext_resource type="PackedScene" uid="uid://c1q3ul4v3ac5j" path="res://Asset/Scene/main_menu_background.tscn" id="8_m0n3g"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3v0j")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 500.0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.427451)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 547.0
+offset_bottom = 349.0
+texture = ExtResource("1_4k5ld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -248.0
+offset_right = 350.0
+offset_bottom = -88.0
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Button Start" type="TextureButton" parent="Control/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("2_in8gt")
+texture_pressed = ExtResource("3_2uaip")
+texture_hover = ExtResource("4_3syc4")
+
+[node name="Button Quit" type="TextureButton" parent="Control/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("5_iju5i")
+texture_pressed = ExtResource("6_nwk8k")
+texture_hover = ExtResource("7_8yxxc")
+
+[node name="MainMenuBackground" parent="." instance=ExtResource("8_m0n3g")]
+
+[connection signal="button_up" from="Control/VBoxContainer/Button Start" to="Control" method="_on_button_start_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/Button Quit" to="Control" method="_on_button_quit_button_up"]
