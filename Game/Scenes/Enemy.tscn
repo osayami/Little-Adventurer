@@ -2886,7 +2886,7 @@ skin = SubResource("Skin_vi4vg")
 libraries = {
 "": SubResource("AnimationLibrary_q1qk5")
 }
-blend_times = [&"NPC_01_ATTACK", &"NPC_01_DEAD", 0.3, &"NPC_01_ATTACK", &"NPC_01_IDEL", 0.3, &"NPC_01_ATTACK", &"NPC_01_WALK", 0.3, &"NPC_01_IDEL", &"NPC_01_DEAD", 0.3, &"NPC_01_IDEL", &"NPC_01_ATTACK", 0.3, &"NPC_01_IDEL", &"NPC_01_WALK", 0.3, &"NPC_01_WALK", &"NPC_01_DEAD", 0.3, &"NPC_01_WALK", &"NPC_01_ATTACK", 0.3, &"NPC_01_WALK", &"NPC_01_IDEL", 0.3]
+blend_times = [&"NPC_01_ATTACK", &"NPC_01_DEAD", 0.3, &"NPC_01_ATTACK", &"NPC_01_IDEL", 0.3, &"NPC_01_ATTACK", &"NPC_01_WALK", 0.3, &"NPC_01_IDEL", &"NPC_01_ATTACK", 0.3, &"NPC_01_IDEL", &"NPC_01_DEAD", 0.3, &"NPC_01_IDEL", &"NPC_01_WALK", 0.3, &"NPC_01_WALK", &"NPC_01_ATTACK", 0.3, &"NPC_01_WALK", &"NPC_01_DEAD", 0.3, &"NPC_01_WALK", &"NPC_01_IDEL", 0.3]
 
 [node name="MaterialEffectAnimationPlayer" type="AnimationPlayer" parent="VisualNode"]
 root_node = NodePath("../RootNode/GAME RIG 01/Skeleton3D/NPC 01 Mesh")

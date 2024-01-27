@@ -17,6 +17,8 @@ var currentHealth : int :
 @onready var visual: Node3D = $VisualNode
 @onready var animation_player: AnimationPlayer = $VisualNode/AnimationPlayer
 @onready var footstepVFX: GPUParticles3D = $VisualNode/VFX/Footstep_GPUParticles3D
+@onready var footStepSFX: AudioStreamPlayer3D = $VisualNode/VFX/AudioStreamPlayer3D
+@onready var swordSlashSFX: AudioStreamPlayer3D = $VisualNode/VFX/SwordSlashSFX
 
 var coinNumber :int:
 	set(new_value):
@@ -63,3 +65,11 @@ func takeDamage(damage:int , enemy_position:Vector3):
 func addHealth(value:int):
 	currentHealth += value
 	currentHealth = clamp(currentHealth , 0 , maxHealth)
+	
+func playFootStepsSFX():
+	footStepSFX.pitch_scale = randf_range(0.8 , 1.2)
+	footStepSFX.play()
+	
+func playSwordSlashSFX():
+	#swordSlashSFX.pitch_scale = randf_range(0.8 , 1.2)
+	swordSlashSFX.play()

@@ -40,6 +40,7 @@ func _on_button_restart_button_up() -> void:
 	get_tree().reload_current_scene()
 
 func _on_button_main_menu_button_up() -> void:
+	
 	#for scene in get_tree().root.get_children():
 		#scene.queue_free()
 	get_tree().paused = false
